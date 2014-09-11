@@ -1,14 +1,18 @@
 <?php
-function clean(array $dir_list, array $types_to_clean)
+function clean($dir_name, array $types_to_clean)
 {
+    $dir_list = scandir($dir_name);
     foreach ($dir_list as $element) {
-        if (is_file($element)) {
-	    if (in_array($types_to_clean, $filetype($element))) {
-                unlink($element);
+        $filename = $dir_name . '/' . $element;
+        if (is_file($filename)) {
+	    $filetype = strrchr($element, '.');
+	    if (in_array($filetype, $types_to_clean)) {
+                unlink($filename);
 	    }
         }
     }
 }
 
-clean(scandir('./cache'), array('.php', '.html', '.gz'));
-clean(scandir('./cache/t_compile'), array('.php'));
+clean('./cache', array('.php', '.html', '.gz'));
+clean('./cache/t_compile', array('.php'));
+
