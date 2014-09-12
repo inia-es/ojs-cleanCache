@@ -47,5 +47,20 @@ function extract_value($assignment_statement)
 clean('./cache', array('.php', '.html', '.gz'));
 clean('./cache/t_compile', array('.php'));
 
-header('Location: ' . find_base_url());
+$base_url = find_base_url();
+if ($base_url) {
+    header('Location: ' . $base_url);
+}
+else {
+    ?>
+        <html>
+            <body>
+                <h1>ojs-cleanCache</h1>
+                <p>Couldn't find a valid URL for your OJS system.<br/>
+                Please browse manually your OJS home, to check it works 
+		correctly after cache cleaning.</p>
+            </body>
+        </html>
+    <?php
+}
 
