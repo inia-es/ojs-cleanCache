@@ -15,7 +15,7 @@ function clean($dir_name, array $types_to_clean)
 
 function find_base_url()
 {
-    $lines = file('./config.inc.php');
+    $lines = file('../config.inc.php');
     $base_url = get_valid_param_from_config('base_url', $lines);
     $base_url = trim($base_url, '"');
 
@@ -44,8 +44,8 @@ function extract_value($assignment_statement)
     return trim($right_side);
 }
 
-clean('./cache', array('.php', '.html', '.gz'));
-clean('./cache/t_compile', array('.php'));
+clean('../cache', array('.php', '.html', '.gz'));
+clean('../cache/t_compile', array('.php'));
 
 $base_url = find_base_url();
 if ($base_url) {
