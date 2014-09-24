@@ -6,9 +6,9 @@ A cache cleaner for PKP Open Journal System
 INSTALLATION
 ============
 
-1 Download last version at https://github.com/inia-es/ojs-cleanCache/releases 
-- Unzip it in your OJS site and put it into a new folder, i.e. `cleanCache`
-- So far so easy
+1. Download last version at https://github.com/inia-es/ojs-cleanCache/releases 
+1. Unzip it in your OJS site and put it into a new folder, i.e. `cleanCache`
+1. So far so easy
 
 USE
 ===
