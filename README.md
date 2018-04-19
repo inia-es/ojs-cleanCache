@@ -14,7 +14,7 @@ USE
 ===
 Once you detect a possible cache fail, usually with a blank screen instead of your OJS site you can acces **cleanCache** through the URL:
 ```
-http://<your journal site>/cleanCache/cleanCache.php
+http://<your journal site>/cleanCache
 ```
 
 This will clean the cache and, if succesful, will redirect you to the journal site.
